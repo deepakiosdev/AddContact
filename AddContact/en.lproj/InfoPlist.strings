@@ -1,2 +1,8 @@
 /* Localized versions of Info.plist keys */
 
+// Root.strings
+"MUL_VALUE_TITLE"       = "Multiple Values";
+"MUL_VAL"               = "Sound Theme";
+"MUL_VAL_1"             = "Male Voice";
+"MUL_VAL_2"             = "Female Voice";
+"MUL_VAL_3"             = "Mechanical";

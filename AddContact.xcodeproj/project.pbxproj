@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00C17FF918E7D3120040566D /* Root.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00C17FF818E7D3120040566D /* Root.plist */; };
 		00D57AA418E68CD300A8840C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D57AA318E68CD300A8840C /* Foundation.framework */; };
 		00D57AA618E68CD300A8840C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D57AA518E68CD300A8840C /* CoreGraphics.framework */; };
 		00D57AA818E68CD300A8840C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D57AA718E68CD300A8840C /* UIKit.framework */; };
@@ -23,6 +24,8 @@
 		00D57ACB18E68CD300A8840C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D57AA718E68CD300A8840C /* UIKit.framework */; };
 		00D57AD318E68CD300A8840C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00D57AD118E68CD300A8840C /* InfoPlist.strings */; };
 		00D57AD518E68CD300A8840C /* AddContactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D57AD418E68CD300A8840C /* AddContactTests.m */; };
+		00D57AE518E6B5A100A8840C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D57AE418E6B5A100A8840C /* User.m */; };
+		00D57AE818E6B80700A8840C /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D57AE718E6B80700A8840C /* UserProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00C17FF818E7D3120040566D /* Root.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Root.plist; sourceTree = "<group>"; };
 		00D57AA018E68CD300A8840C /* AddContact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddContact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D57AA318E68CD300A8840C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		00D57AA518E68CD300A8840C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,6 +62,10 @@
 		00D57AD018E68CD300A8840C /* AddContactTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AddContactTests-Info.plist"; sourceTree = "<group>"; };
 		00D57AD218E68CD300A8840C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		00D57AD418E68CD300A8840C /* AddContactTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddContactTests.m; sourceTree = "<group>"; };
+		00D57AE318E6B5A100A8840C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		00D57AE418E6B5A100A8840C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		00D57AE618E6B80700A8840C /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
+		00D57AE718E6B80700A8840C /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +135,10 @@
 				00D57ABF18E68CD300A8840C /* DetailViewController.m */,
 				00D57AC118E68CD300A8840C /* Images.xcassets */,
 				00D57AAA18E68CD300A8840C /* Supporting Files */,
+				00D57AE318E6B5A100A8840C /* User.h */,
+				00D57AE418E6B5A100A8840C /* User.m */,
+				00D57AE618E6B80700A8840C /* UserProfileViewController.h */,
+				00D57AE718E6B80700A8840C /* UserProfileViewController.m */,
 			);
 			path = AddContact;
 			sourceTree = "<group>";
@@ -138,6 +150,7 @@
 				00D57AAC18E68CD300A8840C /* InfoPlist.strings */,
 				00D57AAF18E68CD300A8840C /* main.m */,
 				00D57AB118E68CD300A8840C /* AddContact-Prefix.pch */,
+				00C17FF818E7D3120040566D /* Root.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -240,6 +253,7 @@
 				00D57AC218E68CD300A8840C /* Images.xcassets in Resources */,
 				00D57AB718E68CD300A8840C /* Main_iPhone.storyboard in Resources */,
 				00D57AAE18E68CD300A8840C /* InfoPlist.strings in Resources */,
+				00C17FF918E7D3120040566D /* Root.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +273,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				00D57AB418E68CD300A8840C /* AppDelegate.m in Sources */,
+				00D57AE518E6B5A100A8840C /* User.m in Sources */,
 				00D57ABD18E68CD300A8840C /* MasterViewController.m in Sources */,
+				00D57AE818E6B80700A8840C /* UserProfileViewController.m in Sources */,
 				00D57AB018E68CD300A8840C /* main.m in Sources */,
 				00D57AC018E68CD300A8840C /* DetailViewController.m in Sources */,
 			);
@@ -480,6 +496,7 @@
 				00D57ADA18E68CD300A8840C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00D57ADB18E68CD300A8840C /* Build configuration list for PBXNativeTarget "AddContactTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +505,7 @@
 				00D57ADD18E68CD300A8840C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

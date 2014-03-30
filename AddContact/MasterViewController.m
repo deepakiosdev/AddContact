@@ -9,9 +9,12 @@
 #import "MasterViewController.h"
 
 #import "DetailViewController.h"
+#import "User.h"
+#import  "UserProfileViewController.h"
 
 @interface MasterViewController () {
-    NSMutableArray *_objects;
+    NSMutableArray *_userArray;
+    User *user;
 }
 @end
 
@@ -32,8 +35,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    //UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    //self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
@@ -43,12 +46,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
+
+- (void)insertNewObject:(User *)u
 {
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
+    if (!_userArray) {
+        _userArray = [[NSMutableArray alloc] init];
     }
-    [_objects insertObject:[NSDate date] atIndex:0];
+    [_userArray insertObject:u atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
@@ -62,15 +66,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return _userArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    User *u = _userArray[indexPath.row];
+    cell.textLabel.text = u.name;
     return cell;
 }
 
@@ -83,7 +87,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
+        [_userArray removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
@@ -109,7 +113,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        NSDate *object = _objects[indexPath.row];
+        User *object = _userArray[indexPath.row];
         self.detailViewController.detailItem = object;
     }
 }
@@ -118,9 +122,27 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
+        User *object = _userArray[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
+    } else if ([[segue identifier] isEqualToString:@"showUserProfile"])
+    {
+        NSLog(@"sourceViewController:%@, destinationViewController:%@ ",[segue sourceViewController], [segue destinationViewController]
+);
     }
+    
 }
 
+- (IBAction)unwindToThisViewController:(UIStoryboardSegue *)unwindSegue
+{
+    NSLog(@"sourceViewController:%@, destinationViewController:%@ ",[unwindSegue sourceViewController], [unwindSegue destinationViewController] );
+    user = [User new];
+    user.name =  ((UserProfileViewController *)[unwindSegue sourceViewController]).nameTextField.text;
+    user.phone =  ((UserProfileViewController *)[unwindSegue sourceViewController]).phTextField .text;
+    //User *u = [User new];
+     User *u  = ((UserProfileViewController *)[unwindSegue sourceViewController]).user;
+    NSLog(@"1-----name:%@, phone:%@g",user.name, user.phone);
+    NSLog(@"2-----name:%@, phone:%@g",u.name, u.phone);
+    [self insertNewObject:user];
+    
+}
 @end
