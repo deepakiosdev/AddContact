@@ -10,8 +10,10 @@
 #import "User.h"
 
 @interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
+- (IBAction)xyzToMasetView:(UIStoryboardSegue *)unwindSegue;
 
 @property (strong, nonatomic) User *detailItem;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *detailNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *detailPhoneNumberLabel;
 @end

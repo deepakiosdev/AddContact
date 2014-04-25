@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "PhoneNumber.h"
 #import "User.h"
 
 @interface DetailViewController ()
@@ -37,7 +38,11 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = self.detailItem.name;
+        self.detailNameLabel.text = self.detailItem.name;
+        
+        PhoneNumber *phoneNumber = [PhoneNumber phoneNumberOrNil:self.detailItem.phone];
+
+        self.detailPhoneNumberLabel.text = [phoneNumber formattedPhoneNumber];
     }
 }
 
@@ -79,5 +84,9 @@
     }
 }
 
+- (IBAction)xyzToMasetView:(UIStoryboardSegue *)unwindSegue
+{
+    
+}
 
 @end

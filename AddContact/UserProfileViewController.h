@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
-@interface UserProfileViewController : UIViewController <UITextFieldDelegate>
+@interface UserProfileViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *nameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *phTextField;
 @property (strong, nonatomic) User *user;

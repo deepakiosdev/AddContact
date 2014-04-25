@@ -26,6 +26,8 @@
 		00D57AD518E68CD300A8840C /* AddContactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D57AD418E68CD300A8840C /* AddContactTests.m */; };
 		00D57AE518E6B5A100A8840C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D57AE418E6B5A100A8840C /* User.m */; };
 		00D57AE818E6B80700A8840C /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D57AE718E6B80700A8840C /* UserProfileViewController.m */; };
+		00E29B0C18FE33DC0059C5A3 /* PhoneNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E29B0B18FE33DC0059C5A3 /* PhoneNumber.m */; };
+		00E29B0F18FE34A90059C5A3 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E29B0E18FE34A90059C5A3 /* Constants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,10 @@
 		00D57AE418E6B5A100A8840C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		00D57AE618E6B80700A8840C /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
 		00D57AE718E6B80700A8840C /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
+		00E29B0A18FE33DC0059C5A3 /* PhoneNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneNumber.h; sourceTree = "<group>"; };
+		00E29B0B18FE33DC0059C5A3 /* PhoneNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneNumber.m; sourceTree = "<group>"; };
+		00E29B0D18FE34A90059C5A3 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		00E29B0E18FE34A90059C5A3 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,10 @@
 				00D57AE418E6B5A100A8840C /* User.m */,
 				00D57AE618E6B80700A8840C /* UserProfileViewController.h */,
 				00D57AE718E6B80700A8840C /* UserProfileViewController.m */,
+				00E29B0A18FE33DC0059C5A3 /* PhoneNumber.h */,
+				00E29B0B18FE33DC0059C5A3 /* PhoneNumber.m */,
+				00E29B0D18FE34A90059C5A3 /* Constants.h */,
+				00E29B0E18FE34A90059C5A3 /* Constants.m */,
 			);
 			path = AddContact;
 			sourceTree = "<group>";
@@ -275,6 +285,8 @@
 				00D57AB418E68CD300A8840C /* AppDelegate.m in Sources */,
 				00D57AE518E6B5A100A8840C /* User.m in Sources */,
 				00D57ABD18E68CD300A8840C /* MasterViewController.m in Sources */,
+				00E29B0F18FE34A90059C5A3 /* Constants.m in Sources */,
+				00E29B0C18FE33DC0059C5A3 /* PhoneNumber.m in Sources */,
 				00D57AE818E6B80700A8840C /* UserProfileViewController.m in Sources */,
 				00D57AB018E68CD300A8840C /* main.m in Sources */,
 				00D57AC018E68CD300A8840C /* DetailViewController.m in Sources */,
